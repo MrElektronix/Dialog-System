@@ -6,14 +6,40 @@
 	
 	<link rel="stylesheet" type="text/css" href="style.css">
 
-	
 </head>
 
 <body>
 	
-	<canvas id="canvas"></canvas>
+	
+	<div class="tabs">
+		<button class="tablinks" id="system-button">System</button>
+		<button class="tablinks" id="canvas-button">Canvas</button>
+	</div>
+	
+	<div id="canvasDiv" class="tabcontent">
+		<canvas id="canvas"></canvas> 
+	</div>
+	
+	<div id="systemDiv" class="tabcontent">
+		<div id="controls">
+			<button id="add_player" type="button">Add Player</button>
+		</div>
+		
+		<div id="node_background">
+
+		</div>
+	</div>
+	
+	
+	
+
+	
+	
 	<script src="Classes/Object.js" charset="utf-8"></script>
 	<script src="Classes/Game.js" charset="utf-8"></script>
+	<script src="Classes/playerBlock.js" charset="utf-8"></script>
+	<script src="Classes/questionBlock.js" charset="utf-8"></script>
+	<script src="Classes/answerBlock.js" charset="utf-8"></script>
 
 	
 	<script src="main.js" charset="utf-8"></script>

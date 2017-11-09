@@ -1,6 +1,5 @@
 class Block {
 	constructor(x, y, width, height, innerhtml) {
-		this.arr = [];
 		this.x = x;
 		this.y = y;
 		this.width = width;
@@ -14,7 +13,10 @@ class Block {
 		this.offset = [0, 0];
 		this.mousePosition = {};
 		
+		
 		this.init();
+		
+		let self = this;
 	}
 	
 	
@@ -28,6 +30,8 @@ class Block {
 		this.div.style.textAlign = "center";
 		this.div.style.position = "absolute";
 		this.div.style.border = "solid black 2px";
+		this.div.style.backgroundColor = "#FF1493"
+		this.div.style.borderRadius = "5px";
 		this.div.style.width = widthString + "px";
 		this.div.style.height = heightString + "px";
 		this.div.style.top = yString + "px";
@@ -37,6 +41,7 @@ class Block {
 		this.div.addEventListener('mouseup', this.MouseUp);
 		this.div.addEventListener('mousedown', this.MouseDown);
 		this.div.addEventListener('mousemove', this.MouseMove);
+
 	}
 	
 	
@@ -68,5 +73,7 @@ class Block {
 
 		}
 	}
+	
+	
 	
 }

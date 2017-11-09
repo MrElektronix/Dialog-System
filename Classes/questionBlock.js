@@ -1,30 +1,23 @@
 class questionBlock {
-	constructor() {
-		
+	constructor(inputID) {
+		this.inputID = inputID;
+		this.questionvalue;
 		this.block;
-		this.lockquestion;
-		this.addanswers;
 		
-		//this.question;
-		this.answerblock;
-		//this.answer = [];
+		
+		this.blockValue;
+		this.init();
+		
 	}
 	
 	init(){
-		this.block = new Block(250, 120, 250, 80, '<form >' +
-								'Question: <input type="text" style="width:140px; margin-top:10px;" id="question"/>' +
-								'<input type="button" value="Lock Question" id="lockquestion"/>' +
-								'<input type="button" value="Add Answers" id="addanswers"/>' +
+		this.block = new Block(250, 120, 250, 80, '<form onSubmit="return false;">' +
+								'Question: <input type="text" style="width:140px; margin-top:10px;" id="'+this.inputID+'"/>' +
+							   	
                  			'</form>');
 			
 		this.block.node_background = document.getElementById("node_background")
 		this.block.node_background.appendChild(this.block.div);
-		
-		this.lockquestion = document.getElementById("lockquestion");
-		this.addanswer = document.getElementById("addanswers");
-		
-		this.lockquestion.addEventListener('click', this.saveQuestion);
-		this.addanswer.addEventListener('click', this.createAnswerBlock);
 	}
 
 	
@@ -83,13 +76,10 @@ class questionBlock {
 	}
 	*/
 	
-	saveQuestion(){
-		this.question = document.getElementById("question");
-		console.log(this.question.value);
-	}
 	
-	createAnswerBlock() {
-		this.answerblock = new answerBlock();
-		this.answerblock.init();
+	getQuestionValue(){
+		this.questionvalue = document.getElementById(this.inputID).value;
+	
+		return this.questionvalue;
 	}
 }
